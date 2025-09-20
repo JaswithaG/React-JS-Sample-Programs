@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>let, var, const Example</title>
+</head>
+<body>
+    <script>
+        // var example: function scoped and can be redeclared and updated
+        var x = 10;
+        var x = 20; // redeclaration allowed
+        x = 30; // update allowed
+        console.log("var x:", x);
+
+        // let example: block scoped, cannot be redeclared but can be updated
+        let y = 10;
+        // let y = 20; // SyntaxError: Identifier 'y' has already been declared
+        y = 20; // update allowed
+        console.log("let y:", y);
+
+        // const example: block scoped, cannot be redeclared or updated
+        const z = 10;
+        // z = 20; // TypeError: Assignment to constant variable.
+        console.log("const z:", z);
+
+        // Demonstrate block scope
+        if (true) {
+            var x = 40; // redeclares and updates x in function/global scope
+            let y = 30; // block scoped y
+            const z = 30; // block scoped z
+            console.log("Inside block - var x:", x);
+            console.log("Inside block - let y:", y);
+            console.log("Inside block - const z:", z);
+        }
+
+        console.log("Outside block - var x:", x);
+        console.log("Outside block - let y:", y);
+        console.log("Outside block - const z:", z);
+    </script>
+</body>
+</html>
